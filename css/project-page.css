@@ -2,17 +2,15 @@
     padding-left: 1rem;
 }
 
-.header-info-container {
-    padding-left: 1rem;
-}
-
-.para p {
+.para p,
+.para li {
     padding-left: 1rem;
 }
 
 .header-label {
     color: #282928;
     font-weight: 400;
+    width: 6rem;
 }
 
 .para {
