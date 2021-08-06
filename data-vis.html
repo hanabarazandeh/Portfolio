@@ -14,56 +14,91 @@
     <link rel="stylesheet" href="css/grids.css">
 </head>
 
-
-<header class="grid two-column add-gutters">
-    <section>
-        <h1>Data Visualization</h1>
-        <p class="header-date">April, 2021
-        </p>
-    </section>
-
-    <section class="header-info-container">
-        <section class="grid header-columns add-gutters">
-            <!-- make these h2, semantic, research, .. shoudl each be list elem  -->
-            <p class="header-label">Skills
-            </p>
-            <p>JavaScript, D3.js
+<body class="body-data-vis">
+    <header class="grid two-column add-gutters">
+        <section>
+            <h1>Data Visualization</h1>
+            <p class="header-date">April, 2021
             </p>
         </section>
-        <section class="grid header-columns add-gutters">
-            <p class="header-label">Role
-            </p>
-            <p>Research, dataset creation, dataset cleaning, programming, analyzing visualizations and documentation
+
+        <div class="header-info-container">
+            <section class="grid header-columns add-gutters">
+                <!-- make these h2, semantic, research, .. shoudl each be list elem  -->
+                <h2 class="header-label">Skills
+                </h2>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>D3.js</li>
+                </ul>
+            </section>
+            <section class="grid header-columns add-gutters">
+                <h2 class="header-label">Role
+                </h2>
+                <ul>
+                    <li>Research</li>
+                    <li>dataset creation</li>
+                    <li>dataset cleaning</li>
+                    <li>programming</li>
+                    <li>analyzing visualizations</li>
+                    <li>documentation</li>
+                </ul>
+            </section>
+            <section class="grid header-columns add-gutters">
+                <h2 class="header-label"> Tools
+                </h2>
+                <ul>
+                    <li>Observable</li>
+                    <li>Numbers</li>
+                    <li>Tableau</li>
+                </ul>
+            </section>
+        </div>
+
+    </header>
+
+    <div class="main-container">
+        <section class="para">
+            <h2>Overview</h2>
+            <p>University enrolment is an <a href="https://observablehq.com/">Observable</a> tool with a series of visualizations that I designed and developed to explore post secondary enrolment patterns in Canada.
             </p>
         </section>
-        <section class="grid header-columns add-gutters">
-            <p class="header-label"> Tools
-            </p>
-            <p>Observable, Numbers and Tableau
-            </p>
-        </section>
-    </section>
-</header>
 
-<section class="main-container">
-    <section class="para">
-        <h2>Overview</h2>
-        <p>University enrolment is an <a href="https://observablehq.com/">Observable</a> tool with a series of visualizations that I designed and developed to explore post secondary enrolment patterns in Canada.
-        </p>
-    </section>
+        <section class="para">
+            <h2>Vis 2: International university enrolment</h2>
+            <h3>My first step after research and data cleaning</h3>
+            <p>design a visualization that shows the relationship between different dimensions: vis 2</p>
+            <p>Vis 2: International university enrolment by country of citizenship, gender, and field of study, throughout the years 2010-2018</p>
+            <h3>The purpose of vis 2</h3>
+            <p>find the right questions regarding the data. Then I created other visualizations that try to answer those questions. </p>
+            <h3>Challenge 1</h3>
+            <p>Choosing the right visual encodings that reduce the cognitive load</p>
+            <h3>Solution 1</h3>
+            <ul>
+                <li>Bar chart, because we are the most accurate at mapping length to a value in our brains according to Stevens power law. </li>
+                <li>Color, because it is best for distinguishing between discrete categories.</li>
+            </ul>
+            <h3>Challenge 2</h3>
+            <p>Too many dimensions (4), difficult to observe all of these at once, with one visualization:</p>
+            <ul>
+                <li>Number of students from different regions throughout the years.</li>
+                <li>Change in number of students from, for instance, Middle East throughout the years.</li>
+                <li>STEM vs BHASE ratio in different nationalities. </li>
+                <li>Gender ratio among different nationalities, throughout the years.</li>
+            </ul>
+            <h3>Solution 2</h3>
+            <p>Interactivity: </p>
+            <ul>
+                <li>
+                    A slider that can be used to change the year, this way we can see how the number of students from different regions change over the years dynamically.
+                </li>
+                <li>
+                    Dragging over a chart filtering the results on the other chart, this way we can see the gender ratio for different regions, in different years.
+                </li>
+            </ul>
 
-    <section class="para">
-        <h2>Vis 2: International university enrolment</h2>
-        <p>For readers convenience, I will only introduce the visualization that I find the most important in the project:</p>
-        <p>Vis 2: International university enrolment by country of citizenship, gender, and field of study, throughout the years 2010-2018</p>
-        <p>In this interactive visualization I intended to explore the change in the population of international students for each region as well as the STEM vs BHASE ratio for each dimension.</p>
-        <p>The reason why I chose to analyze so many dimensions together in one vis was is that it raises questions that I made other visualizations to explore.</p>
-        <p>
-            Since this is a complex data to deal with, I decided on a highly interactive vis to enable exploration across different subsets.</p>
-        <p>
-            Below you can see the structure that I decided on for vis 2:</p>
-        <figure>
-            <img src="img/viz2-structure-800.jpg" alt="the structure of visualization 2, where on top right there is a slider that moves the time range for the 2 charts on the bottoms. 
+            <figure>
+                <img src="img/viz2-structure-800.jpg" alt="the structure of visualization 2, where on top right there is a slider that moves the time range for the 2 charts on the bottoms. 
                 On bottom left there is a chart that compares the number of international students from different countries at a selected year/time period. 
                 Dragging mouse over this chart filters data on the chart on the right. 
                 The chart on the right shows the gender ratio for total international students at a selected year/time period. 
@@ -73,17 +108,11 @@
                 img/viz2-structure-1600.jpg 1600w
                     " sizes="(min-width: 75rem) 50vw,
                     100vw">
-            <figcaption>the structure and interactions of vis 2</figcaption>
-        </figure>
-        <p>Next decision I needed to make was the visual encodings: </p>
-        <p>I decided to choose visual encodings that are easiest to comprehend for human brain, so that it does not add to the complexity of this visualization; we are the most accurate at mapping length to a value in our brains according to Stevens power
-            law.
-        </p>
-        <p>So I decided on bar chart for both charts.</p>
-        <p>And for the second visual encoding I chose color, because it is best for distinguishing between discrete categories.</p>
-        <p>Below you can see the final look of vis 2:</p>
-        <figure>
-            <img src="img/viz2-800.jpg" alt="final look of vis 2, where on top right there is a slider that moves the time range for the 2 charts on the bottoms, the current years shown are 2010-2011. 
+                <figcaption>the structure and interactions of vis 2</figcaption>
+            </figure>
+            <p>Below you can see the final look of vis 2:</p>
+            <figure>
+                <img src="img/viz2-800.jpg" alt="final look of vis 2, where on top right there is a slider that moves the time range for the 2 charts on the bottoms, the current years shown are 2010-2011. 
                 On bottom left there is a chart that compares the number of international students from different countries in 2010-2011, and the regions are labeled as Africa, America
                 , Eastern Asia, Europe, Oceania, Other, geographical sub-region, Southeast Asia, Southern Asia, West Central Asia And
                 the Middle East. 
@@ -95,23 +124,10 @@
                 img/viz2-1000.jpg 1000w
                     " sizes="(min-width: 75rem) 50vw,
                     100vw">
-            <figcaption>final look of vis 2</figcaption>
-        </figure>
-    </section>
-    <section class="para">
-        <h2>Challenges</h2>
-        <p>The main challenge I faced was finding the appropriate data that would allow me to explore the questions arose by vis 2. </p>
-        <p>For instance, For visualization 5, I wanted to examine the academic performances of regions with high STEM ratio in female students (Middle East and Central and Southern Asia ). But I could not find any data on that. </p>
-        <p>So instead, I used academic performance in high school for East Asian countries, which still answered the question: there is no correlation between academic performance and choosing STEM.</p>
-    </section>
-
-    <section class="para">
-        <h2>What I learnt</h2>
-        <p>After hours and hours of looking for datasets, I learnt a valuable lesson: </p>
-        <p>As designers, we won't always necessary have the perfect data, or the most solid idea given by the client to work with. And that is what makes the design process a beautiful experience: to take something complex or vague and make it simple and
-            easy to understand.</p>
-    </section>
-</section>
+                <figcaption>final look of vis 2</figcaption>
+            </figure>
+        </section>
+    </div>
 
 
 </body>
