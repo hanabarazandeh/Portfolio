@@ -1,0 +1,25 @@
+.header-date {
+    padding-left: 1rem;
+}
+
+.header-info-container {
+    padding-left: 1rem;
+}
+
+.para p {
+    padding-left: 1rem;
+}
+
+.header-label {
+    color: #282928;
+    font-weight: 400;
+}
+
+.para {
+    margin-bottom: 3rem;
+}
+
+figcaption {
+    text-align: center;
+    color: #888;
+}

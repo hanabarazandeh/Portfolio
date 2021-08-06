@@ -1,0 +1,85 @@
+/*
+	Setting the grid structure and its responsiveness up
+*/
+
+.grid {
+    display: grid;
+}
+
+.nav-item {
+    padding: 1rem;
+}
+
+.grid.add-gutters {
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1rem;
+}
+
+@media (max-width: 550px) {
+    .three-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 550px) {
+    .three-column {
+        grid-template-columns: 1.5fr 1fr 0.75fr;
+    }
+    .bordered {
+        border-right: 2px solid black;
+    }
+}
+
+@media (min-width: 700px) {
+    .two-column {
+        grid-template-columns: 1fr 1fr;
+    }
+    .nav_parent {
+        margin: auto;
+        margin-right: inherit;
+    }
+}
+
+@media (max-width: 700px) {
+    .nav_parent {
+        padding: 1rem;
+    }
+}
+
+.main-container {
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 600px) {
+    .main-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .columns-projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .main-container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .columns-projects {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main-container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .columns-projects {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.header-columns {
+    grid-template-columns: 1fr 4fr;
+}

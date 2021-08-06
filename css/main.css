@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1em;
+    color: #282928;
+    font-family: helvetica;
+}
+
+p {
+    font-size: 1.25em;
+    line-height: 28px;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0.67em 0;
+}
+
+header {
+    /* background-color: #3CA5B6; */
+    border-bottom: solid 2px;
+    padding-bottom: 1rem;
+}
+
+h1,
+h2 {
+    font-family: 'PT Mono', monospace;
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
+
+a {
+    color: #282928;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+a:hover,
+a:focus {
+    color: slateblue;
+    /* text-decoration: underline slateblue 2px;
+    text-underline-offset: 0.5rem; */
+}
+
+p {
+    color: #888;
+    font-weight: 100;
+}
+
+@media (max-width: 700px) {
+    nav {
+        max-width: 30rem;
+        border: 2px solid;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 700px) {
+    nav {
+        max-width: 10rem;
+        text-align: left;
+    }
+}
+
+.button {
+    display: block;
+    text-decoration: none;
+    padding: 1em;
+    border: 0;
+    width: 100%;
+    text-align: left;
+    background-color: none;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+#menu-toggle {
+    background-color: white;
+    padding-bottom: 1em;
+    padding-left: 0;
+}
+
+.button:hover,
+.button:focus {
+    color: slateblue;
+}
+
+
+/*
+	Here we have added a simple class that will allow us to toggle the visibility of an element on (or off) for the purposes of showing and hiding our menu.
+*/
+
+.hidden {
+    display: none;
+}
+
+.project-container {
+    width: fit-content;
+    height: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    color: #282928;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+}
+
+.title:hover,
+.title:focus {
+    color: slateblue;
+}
+
+.date {
+    display: block;
+    margin-top: 0;
+}
+
+#my-pic {
+    border-radius: 100%;
+    width: 100%;
+    padding: 5%;
+}
