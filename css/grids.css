@@ -15,15 +15,59 @@
     grid-row-gap: 1rem;
 }
 
-@media (max-width: 400px) {
+
+/* @media (max-width: 400px) {
     .body-data-vis {
         width: min-content;
     }
-}
+} */
 
-@media (max-width: 450px) {
+
+/* @media (max-width: 450px) {
     .body-home {
         width: min-content;
+    }
+} */
+
+@media (max-width: 1100px) {
+    .three-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 700px) {
+    .three-column {
+        grid-template-columns: 1.5fr 1fr 0.75fr;
+    }
+    .bordered {
+        border-right: 2px solid black;
+    }
+}
+
+
+/* these are for the header */
+
+@media (min-width: 700px) and (max-width: 1100px) {
+    .two-column {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1700px) {
+    .two-column {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+@media (min-width: 1700px) {
+    .two-column {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .nav_parent {
+        padding: 1rem;
     }
 }
 
@@ -41,21 +85,6 @@
     }
 }
 
-@media (max-width: 1100px) {
-    .three-column {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (min-width: 1100px) {
-    .three-column {
-        grid-template-columns: 1.5fr 1fr 0.75fr;
-    }
-    .bordered {
-        border-right: 2px solid black;
-    }
-}
-
 @media (min-width: 700px) {
     .nav_parent {
         margin: auto;
@@ -66,32 +95,55 @@
     }
 }
 
-@media (min-width: 700px) and (max-width: 1100px) {
-    .two-column {
-        grid-template-columns: 1fr 1fr;
+
+/* for project page header */
+
+.header-fixed div section {
+    /* grid-template-columns: 1fr 1fr; */
+    margin-bottom: 1rem;
+    /* display: grid; */
+}
+
+
+/* @media (min-width: 400px) {
+    .header-fixed {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+} */
+
+
+/* when scrolling down */
+
+@media screen and (min-width:400px) and (max-width: 700px) {
+    .header-fixed {
+        grid-template-columns: 1.5fr 1fr;
+        align-items: baseline;
     }
 }
 
-@media (min-width: 1100px) and (max-width: 1700px) {
-    .two-column {
-        grid-template-columns: 2fr 1fr;
-    }
-}
 
-@media (min-width: 1700px) {
-    .two-column {
-        grid-template-columns: 3fr 1fr;
-    }
-}
-
-@media (max-width: 700px) {
-    .nav_parent {
-        padding: 1rem;
-    }
-}
+/* these are for the projects that are below the header */
 
 .main-container {
     margin-top: 5%;
+}
+
+
+/* this is also for main-container, but becomes active when scrolling down */
+
+.top-margin {
+    margin-top: 40% !important;
+}
+
+@media screen and (max-width:500) {
+    .bigger-top-margin {
+        margin-top: 140% !important;
+    }
+}
+
+.bigger-top-margin {
+    margin-top: 55% !important;
 }
 
 @media screen and (max-width: 600px) {
