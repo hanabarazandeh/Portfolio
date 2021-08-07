@@ -40,7 +40,6 @@ menu_toggle.addEventListener('click',
         //if menu is hidden, we want to do something, and if not we want to do something else
         if (nav.classList.contains('hidden')) {
             //meny is hidden, show it
-            console.log('menu is hidden, showing the menu');
             nav.classList.remove('hidden');
             nav.classList.add('grid');
             nav.setAttribute('aria-hidden', 'false');
@@ -50,7 +49,6 @@ menu_toggle.addEventListener('click',
 
         } else {
             //menu is showing, hide it 
-            console.log('menu is showing, hiding the menu');
             nav.classList.add('hidden');
             nav.classList.remove('grid');
             nav.setAttribute('aria-hidden', 'true');

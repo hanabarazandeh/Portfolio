@@ -21,3 +21,7 @@ figcaption {
     text-align: center;
     color: #888;
 }
+
+.header-fixed .header-info-container {
+    display: none;
+}

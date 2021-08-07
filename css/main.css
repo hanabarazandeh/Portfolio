@@ -9,6 +9,7 @@ body {
     padding: 1em;
     color: #282928;
     font-family: helvetica;
+    width: fit-content;
 }
 
 h1 {
@@ -56,10 +57,49 @@ header {
     padding-bottom: 1rem;
 }
 
+
+/* when scrolling down, these will be active*/
+
+.header-smaller h1 {
+    font-size: 1.5em;
+}
+
+.header-smaller h2 {
+    display: none;
+}
+
+
+/* .header-smaller div section .header-date {
+    display: none;
+}
+
+.header-smaller div section h1 {
+    display: none;
+} */
+
+
+/* 
+this hides the project title and the date on scroll */
+
+.header-smaller section {
+    display: none;
+}
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+    padding-bottom: 0;
+}
+
 a {
     color: #282928;
     font-weight: 400;
     font-size: 1.25rem;
+    display: inline;
 }
 
 a:hover,
@@ -67,6 +107,10 @@ a:focus {
     color: slateblue;
     /* text-decoration: underline slateblue 2px;
     text-underline-offset: 0.5rem; */
+}
+
+#curr-nav-item {
+    color: slateblue;
 }
 
 .button {
