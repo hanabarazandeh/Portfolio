@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/grids.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
 
 <body>
@@ -18,36 +19,40 @@
     <header class="grid two-column add-gutters">
         <section>
             <h1>Hana Barazandeh</h1>
-            <h2>Web & app developer | UI/UX designer</h2>
+            <h2 id="career">UI Developer & Designer</h2>
         </section>
+        <!-- 
+        turn sections into divs so no need for heading -->
 
-
-        <section class="nav_parent">
-            <nav id="nav">
+        <div class="nav_parent">
+            <nav class="grid three-column" id="nav">
 
                 <div class="nav-item ">
-                    <a href="">Academic Projects</a>
+                    <a href="index.html">Academic Projects</a>
                 </div>
 
                 <div class="nav-item">
-                    <a href="">Illustrations</a>
+                    <a>Illustrations</a>
                 </div>
 
                 <div class="nav-item ">
-                    <a href="">About</a>
+                    <a href="about.html" id="curr-nav-item">About</a>
                 </div>
             </nav>
-        </section>
+        </div>
     </header>
 
     <section class="main-container two-column grid">
         <img id="my-pic" src="img/me.jpg">
         <div>
-            <p>Hi, my name is Hana, and I design and develop user-centred interfaces that are accessible and desirable.</p>
-            <p>I love to volunteer and give back with design work; I have been designing for non-profit organizations such as Greenstand and Blucos.</p>
+            <p>Hi, my name is Hana, I study interactive systems at <a href="https://www.sfu.ca/siat.html"> SIAT (SFU)</a> and I design and develop user-centred interfaces that are accessible and desirable.</p>
+            <p>I love to volunteer and give back with design work; I have been designing user interfaces and illustrating for non-profit organizations such as <a href="https://greenstand.org/">Greenstand</a> and <a href="https://opencorporates.com/companies/ca/12368471">Blucos</a>.</p>
             <p>Creativity is not only work or volunteering for me; in my free time, I like to illustrate digitally or on paper.</p>
-            <p>I am ready to make a difference with my newly learnt skills through my academic projects. Let's get in touch:</p>
-            <a>Linkedin</a>
+            <p>I am ready to make a difference with my newly learnt skills through my academic projects.</p>
+            <p>Let's get in touch:</p>
+            <a href="https://www.linkedin.com/in/hana-barazandeh/" aria-label="link to my Linkedin profile">
+                <img src="img/linkedin.png" class="social-link" alt="Linkedin icon that links to my Linkedin profile">
+            </a>
         </div>
 
     </section>
@@ -55,6 +60,7 @@
 
     <script src="js/dropdown.js">
     </script>
+    <script src="header-dynamic.js"></script>
 </body>
 
 </html>
