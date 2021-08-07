@@ -43,18 +43,14 @@ li {
     font-weight: 100;
 }
 
-li {
-    list-style-type: none;
-}
-
-ul {
-    padding: 0;
-}
-
 header {
     /* background-color: #3CA5B6; */
     border-bottom: solid 2px;
     padding-bottom: 1rem;
+}
+
+header li {
+    list-style-type: none;
 }
 
 

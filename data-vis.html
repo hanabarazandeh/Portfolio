@@ -77,42 +77,73 @@
     </header>
     <div class="main-container" id="data-vis-main-container">
         <section class="para">
-            <h2>Overview</h2>
+            <h2 class="project-h2">Overview</h2>
             <p>University enrolment is an <a href="https://observablehq.com/">Observable</a> tool with a series of visualizations that I designed and developed to explore post secondary enrolment patterns in Canada.
             </p>
-            <p>The main goal of this project was to design a tool that makes a very large dataset into insight; more specifically, help the audience discover the relationship between different dimensions.</p>
+            <p>The main goal of this project was to transform a very large dataset (and some smaller related datasets) into insight; more specifically, help the audience discover the relationship between different dimensions.</p>
         </section>
 
         <section class="para">
-            <p>I will talk about a visualization in this project that I consider the most important:</p>
-            <h2>International university enrolment by country of citizenship, gender, and field study, and year</h2>
-            <p>I aimed to design a visualization that could find some patterns, and help find the right questions. Questions like:</p>
-            <ul>
-                <li>If some nationalities among international students are increasing faster over the years, are these values proportional to the population of those regions? </li>
-                <li>If female students are increasing in STEM enrolments, is it the same rate among different nationalities?</li>
-            </ul>
-            <p>And then I created other visualizations that try to answer those questions. </p>
-            <section>
-                <h3>Challenge 1</h3>
-                <p>Choosing the right visual encodings that reduce the cognitive load</p>
-                <h3>Solution 1</h3>
+            <h2 class="project-h2">Initial Problem</h2>
+            <div class="inner-para">
+                <p>I will talk about a visualization in this project that I consider the most important:</p>
+                <h3>International university enrolment by country of citizenship, gender, and field study, and year</h3>
+            </div>
+
+            <div class="inner-para">
+                <p>I aimed to design a visualization that could find some patterns, and help find the right questions, questions like:</p>
                 <ul>
-                    <li>Bar chart, because we are the most accurate at mapping length to a value in our brains according to Stevens power law. </li>
+                    <li>If some nationalities among international students are increasing faster over the years, are these values proportional to the population of those regions? </li>
+                    <li>If female students are less likely to choose STEM, what are some possible reasons?</li>
+                    <li>If female students are increasing in STEM enrolments, is it the same rate among different nationalities?</li>
+                </ul>
+                <p>And then I could create other visualizations that try to answer those questions. But first there were challenges to overcome before I could achieve that; I needed to tackle too many dimensions (5 dimensions) in one visualization. </p>
+            </div>
+
+            <div class="inner-para">
+                <p>I explored different types of charts, such as the one below which is a draft I made in Tableau, but they were not helping with making the data more understandable.
+                </p>
+                <figure>
+                    <img src="img/draft.png" alt="a screenshot of a draft of the visualization, where country of citizenship and year are mapped to the x axis, 
+            the number is mapped to the y axis, and color is used to indicate gender. Dark blue is for female and orange for male gender.
+            The legend is shown on top right.">
+                    <figcaption>draft of the visualization</figcaption>
+                </figure>
+                <p>Some problems with this draft:</p>
+                <ul>
+                    <li>difficult to compare the number of different nationalities in a given year, like 2013</li>
+                    <li>difficult to compare gender ratio of a nationality with another, in a given year</li>
+                    <li>color works great for indicating gender, but what about STEM vs BHASE? it would be too complicated to have 2 visual encodings for 2 categorical dimensions.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class="para">
+            <h2 class="project-h2">Process</h2>
+            <p>I came up with the following solutions for the stated problems:</p>
+
+            <section class="inner-para">
+                <h3>The right visual encodings that reduce the cognitive load</h3>
+                <ul>
+                    <li>Bar chart where number of students by nationality and gender are mapped to y axis, because we are the most accurate at mapping length to a value in our brains according to Stevens power law. </li>
                     <li>Color to indicate the field of study (STEM vs BHASE), because it is best for distinguishing between discrete categories.</li>
                 </ul>
             </section>
 
-            <section>
-                <h3>Challenge 2</h3>
-                <p>Too many dimensions (4), difficult to observe all of these at once, with one visualization:</p>
+            <section class="inner-para">
+                <h3>2 facets</h3>
                 <ul>
-                    <li>Number of students from different regions throughout the years.</li>
-                    <li>Change in number of students from, for instance, Middle East throughout the years.</li>
-                    <li>STEM vs BHASE ratio in different nationalities. </li>
-                    <li>Gender ratio among different nationalities, throughout the years.</li>
+                    <li>2 facets allowed me to use less visual encodings: 2 simple facets instead of one complex one. I did not have to use a new one for gender, instead I used length just like with nationality. </li>
+                    <li>
+                        2 facets created the oppurtunity for interactivity, which itself was another solution.
+                    </li>
                 </ul>
-                <h3>Solution 2</h3>
-                <p>Interactivity: </p>
+            </section>
+
+            <section class="inner-para">
+                <h3>Interactivity</h3>
                 <ul>
                     <li>
                         A slider that can be used to change the year, this way we can see how the number of students from different regions change over the years dynamically.
@@ -122,37 +153,44 @@
                     </li>
                 </ul>
             </section>
+        </section>
 
-            <figure>
-                <img src="img/viz2-structure-800.jpg" alt="the structure of visualization 2, where on top right there is a slider that moves the time range for the 2 charts on the bottoms. 
-                On bottom left there is a chart that compares the number of international students from different countries at a selected year/time period. 
-                Dragging mouse over this chart filters data on the chart on the right. 
-                The chart on the right shows the gender ratio for total international students at a selected year/time period. 
-                Color is used in both charts to show the STEM to BHASE ratio, blue for BHASE, and orange for STEM.
-                " srcset="img/viz2-structure-800.jpg 800w,
-                img/viz2-structure-1000.jpg 1000w,
-                img/viz2-structure-1600.jpg 1600w
-                    " sizes="(min-width: 75rem) 50vw,
-                    100vw">
-                <figcaption>the structure and interactions of vis 2</figcaption>
-            </figure>
+
+        <section class="para">
+            <h2 class="project-h2">Final Result</h2>
             <p>Below you can see the final look of vis 2:</p>
             <figure>
                 <img src="img/viz2-800.jpg" alt="final look of vis 2, where on top right there is a slider that moves the time range for the 2 charts on the bottoms, the current years shown are 2010-2011. 
-                On bottom left there is a chart that compares the number of international students from different countries in 2010-2011, and the regions are labeled as Africa, America
-                , Eastern Asia, Europe, Oceania, Other, geographical sub-region, Southeast Asia, Southern Asia, West Central Asia And
-                the Middle East. 
-                Dragging mouse over this chart filters data on the chart on the right. 
-                The bar chart on the right shows the gender ratio for total international students in 2010-2011, where bar on the left is for female and the one on the right 
-                is for male gender, each bar is also divided by colors, showing the STEM vs BHASE ratio for each gender in that year. 
-                Color is used in both charts to show the STEM to BHASE ratio, blue for BHASE, and orange for STEM.
-                " srcset="img/viz2-structure-800 800w,
-                img/viz2-1000.jpg 1000w
-                    " sizes="(min-width: 75rem) 50vw,
-                    100vw">
+                    On bottom left there is a chart that compares the number of international students from different countries in 2010-2011, and the regions are labeled as Africa, America
+                    , Eastern Asia, Europe, Oceania, Other, geographical sub-region, Southeast Asia, Southern Asia, West Central Asia And
+                    the Middle East. 
+                    Dragging mouse over this chart filters data on the chart on the right. 
+                    The bar chart on the right shows the gender ratio for total international students in 2010-2011, where bar on the left is for female and the one on the right 
+                    is for male gender, each bar is also divided by colors, showing the STEM vs BHASE ratio for each gender in that year. 
+                    Color is used in both charts to show the STEM to BHASE ratio, blue for BHASE, and orange for STEM.
+                    " srcset="img/viz2-structure-800 800w,
+                    img/viz2-1000.jpg 1000w
+                        " sizes="(min-width: 75rem) 50vw,
+                        100vw">
                 <figcaption>final look of vis 2</figcaption>
             </figure>
+
+            <div class="inner-para">
+                <p>The final visualization enables us to do the following and more:</p>
+                <ul>
+                    <li>compare the number of different nationalities in a given year</li>
+                    <li>compare gender ratio of a nationality with another, in a given year</li>
+                    <li>see how gender ratio for total changes throughout the years</li>
+                    <li>see how STEM vs BHASE ratio changes in both genders over the years</li>
+                </ul>
+            </div>
         </section>
+        <section class="para">
+            <a href="https://observablehq.com/@hanabarazandeh/iat-355-final-project">See the project on Observable</a>
+
+        </section>
+
+
     </div>
 
     <script src="js/dropdown.js">
