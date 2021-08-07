@@ -15,87 +15,113 @@
 </head>
 
 <body class="body-data-vis">
-    <header class="grid two-column add-gutters">
-        <section>
-            <h1>Data Visualization</h1>
-            <p class="header-date">April, 2021
-            </p>
-        </section>
+    <header>
+        <div class="nav_parent">
+            <nav class="grid three-column" id="nav">
 
-        <div class="header-info-container">
-            <section class="grid header-columns add-gutters">
-                <!-- make these h2, semantic, research, .. shoudl each be list elem  -->
-                <h2 class="header-label">Skills
-                </h2>
-                <ul>
-                    <li>JavaScript</li>
-                    <li>D3.js</li>
-                </ul>
+                <div class="nav-item ">
+                    <a href="index.html">Academic Projects</a>
+                </div>
+
+                <div class="nav-item">
+                    <a>Illustrations</a>
+                </div>
+
+                <div class="nav-item ">
+                    <a href="about.html">About</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="grid two-column add-gutters">
+            <section>
+                <h1>Data Visualization</h1>
+                <p class="header-date">April, 2021
+                </p>
             </section>
-            <section class="grid header-columns add-gutters">
-                <h2 class="header-label">Role
-                </h2>
-                <ul>
-                    <li>Research</li>
-                    <li>dataset creation</li>
-                    <li>dataset cleaning</li>
-                    <li>programming</li>
-                    <li>analyzing visualizations</li>
-                    <li>documentation</li>
-                </ul>
-            </section>
-            <section class="grid header-columns add-gutters">
-                <h2 class="header-label"> Tools
-                </h2>
-                <ul>
-                    <li>Observable</li>
-                    <li>Numbers</li>
-                    <li>Tableau</li>
-                </ul>
-            </section>
+
+            <div class="header-info-container">
+                <section class="grid header-columns add-gutters">
+                    <!-- make these h2, semantic, research, .. shoudl each be list elem  -->
+                    <h2 class="header-label">Skills
+                    </h2>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>D3.js</li>
+                    </ul>
+                </section>
+                <section class="grid header-columns add-gutters">
+                    <h2 class="header-label">Role
+                    </h2>
+                    <ul>
+                        <li>Research</li>
+                        <li>dataset creation</li>
+                        <li>dataset cleaning</li>
+                        <li>programming</li>
+                        <li>analyzing visualizations</li>
+                        <li>documentation</li>
+                    </ul>
+                </section>
+                <section class="grid header-columns add-gutters">
+                    <h2 class="header-label"> Tools
+                    </h2>
+                    <ul>
+                        <li>Observable</li>
+                        <li>Numbers</li>
+                        <li>Tableau</li>
+                    </ul>
+                </section>
+            </div>
         </div>
 
     </header>
-
-    <div class="main-container">
+    <div class="main-container" id="data-vis-main-container">
         <section class="para">
             <h2>Overview</h2>
             <p>University enrolment is an <a href="https://observablehq.com/">Observable</a> tool with a series of visualizations that I designed and developed to explore post secondary enrolment patterns in Canada.
             </p>
+            <p>The main goal of this project was to design a tool that makes a very large dataset into insight; more specifically, help the audience discover the relationship between different dimensions.</p>
         </section>
 
         <section class="para">
-            <h2>Vis 2: International university enrolment</h2>
-            <h3>My first step after research and data cleaning</h3>
-            <p>design a visualization that shows the relationship between different dimensions: vis 2</p>
-            <p>Vis 2: International university enrolment by country of citizenship, gender, and field of study, throughout the years 2010-2018</p>
-            <h3>The purpose of vis 2</h3>
-            <p>find the right questions regarding the data. Then I created other visualizations that try to answer those questions. </p>
-            <h3>Challenge 1</h3>
-            <p>Choosing the right visual encodings that reduce the cognitive load</p>
-            <h3>Solution 1</h3>
+            <p>I will talk about a visualization in this project that I consider the most important:</p>
+            <h2>International university enrolment by country of citizenship, gender, and field study, and year</h2>
+            <p>I aimed to design a visualization that could find some patterns, and help find the right questions. Questions like:</p>
             <ul>
-                <li>Bar chart, because we are the most accurate at mapping length to a value in our brains according to Stevens power law. </li>
-                <li>Color, because it is best for distinguishing between discrete categories.</li>
+                <li>If some nationalities among international students are increasing faster over the years, are these values proportional to the population of those regions? </li>
+                <li>If female students are increasing in STEM enrolments, is it the same rate among different nationalities?</li>
             </ul>
-            <h3>Challenge 2</h3>
-            <p>Too many dimensions (4), difficult to observe all of these at once, with one visualization:</p>
-            <ul>
-                <li>Number of students from different regions throughout the years.</li>
-                <li>Change in number of students from, for instance, Middle East throughout the years.</li>
-                <li>STEM vs BHASE ratio in different nationalities. </li>
-                <li>Gender ratio among different nationalities, throughout the years.</li>
-            </ul>
-            <h3>Solution 2</h3>
-            <p>Interactivity: </p>
-            <ul>
-                <li>
-                    A slider that can be used to change the year, this way we can see how the number of students from different regions change over the years dynamically.
-                </li>
-                <li>
-                    Dragging over a chart filtering the results on the other chart, this way we can see the gender ratio for different regions, in different years.
-                </li>
-            </ul>
+            <p>And then I created other visualizations that try to answer those questions. </p>
+            <section>
+                <h3>Challenge 1</h3>
+                <p>Choosing the right visual encodings that reduce the cognitive load</p>
+                <h3>Solution 1</h3>
+                <ul>
+                    <li>Bar chart, because we are the most accurate at mapping length to a value in our brains according to Stevens power law. </li>
+                    <li>Color to indicate the field of study (STEM vs BHASE), because it is best for distinguishing between discrete categories.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Challenge 2</h3>
+                <p>Too many dimensions (4), difficult to observe all of these at once, with one visualization:</p>
+                <ul>
+                    <li>Number of students from different regions throughout the years.</li>
+                    <li>Change in number of students from, for instance, Middle East throughout the years.</li>
+                    <li>STEM vs BHASE ratio in different nationalities. </li>
+                    <li>Gender ratio among different nationalities, throughout the years.</li>
+                </ul>
+                <h3>Solution 2</h3>
+                <p>Interactivity: </p>
+                <ul>
+                    <li>
+                        A slider that can be used to change the year, this way we can see how the number of students from different regions change over the years dynamically.
+                    </li>
+                    <li>
+                        Dragging over a chart filtering the results on the other chart, this way we can see the gender ratio for different regions, in different years.
+                    </li>
+                </ul>
+            </section>
 
             <figure>
                 <img src="img/viz2-structure-800.jpg" alt="the structure of visualization 2, where on top right there is a slider that moves the time range for the 2 charts on the bottoms. 
@@ -129,7 +155,9 @@
         </section>
     </div>
 
-
+    <script src="js/dropdown.js">
+    </script>
+    <script src="header-dynamic.js"></script>
 </body>
 
 </html>
