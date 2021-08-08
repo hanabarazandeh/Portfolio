@@ -1,7 +1,7 @@
 var onTopofPage = true;
 var header = document.querySelector("header");
 
-var headerInfo = document.querySelector(".header-info-container");
+var headerWithoutNav = document.querySelector("#header-without-nav");
 var career = document.querySelector(".career");
 // var bodyHome = document.querySelector("body");
 
@@ -32,12 +32,6 @@ window.addEventListener("scroll", function() {
         if (!header.classList.contains('header-smaller')) {
             header.classList.add('header-fixed');
             header.classList.add('header-smaller');
-
-
-            if (headerInfo != null)
-                headerInfo.setAttribute('aria-hidden', 'false');
-
-
             header.classList.remove('add-gutters');
             onTopofPage = false;
             // bodyHome.classList.remove("body-home");
@@ -55,6 +49,7 @@ window.addEventListener("scroll", function() {
                 isHomePage = true;
 
             }
+            headerWithoutNav.setAttribute('aria-hidden', 'true');
 
         }
     } else {
@@ -64,9 +59,6 @@ window.addEventListener("scroll", function() {
         header.classList.remove('header-smaller');
         header.classList.remove('header-fixed');
 
-        if (headerInfo != null)
-            headerInfo.setAttribute('aria-hidden', 'true');
-
         mainContainer.classList.remove("top-margin");
         if (dataVisContainer != null)
             dataVisContainer.classList.remove("bigger-top-margin");
@@ -75,6 +67,7 @@ window.addEventListener("scroll", function() {
             header.classList.add('grid');
             header.classList.add('add-gutters');
         }
+        headerWithoutNav.setAttribute('aria-hidden', 'false');
     }
 
 });

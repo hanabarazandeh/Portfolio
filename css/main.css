@@ -53,6 +53,11 @@ header li {
     list-style-type: none;
 }
 
+::selection {
+    background: slateblue;
+    color: white;
+}
+
 
 /* when scrolling down, these will be active*/
 
